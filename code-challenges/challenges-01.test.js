@@ -69,17 +69,21 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 const greeting = (word) => {
   // Solution code here...
-  const array1 = ['hello', '301', 'students'];
-  const result = [];
-  array1.forEach(function(string){
-    result.push(string.toUpperCase + '!');
-  })
+  const result = word.toUpperCase() + '!';
   return result;
 };
-
-const speaker = (words, callback) => {
-  // Solution code here...
+  const array2 = ['hello', '301', 'students'];
+  const speaker = (words, callback) => {
+  const result = [];
+  words.forEach(function (word){
+    result.push(callback (word));
+  });
+  return result;
 };
+speaker(array2, greeting);
+
+  // Solution code here...
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -99,10 +103,14 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  result = [];
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  const array3 = []
+  num.push(array3)
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -174,13 +182,13 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-describe('Testing challenge 4', () => {
+xdescribe('Testing challenge 4', () => {
   test('It should provide an array of strings, that get uppercased, and a "!" at the end', () => {
     expect(speaker(['hello', '301', 'students'], greeting)).toStrictEqual(['HELLO!', '301!', 'STUDENTS!']);
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should add the number 8 to the array five times', () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
