@@ -46,10 +46,10 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   // Solution code here...
-  let a = ['Yes', 'it', 'is'];
-  let b = a.slice([0]);
-  a.push(b);
+  const a = ['Yes', 'it', 'is'];
+  const b = a.slice(0);
   console.log(b);
+  b.push(a);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,6 +86,9 @@ console.log(people[1].isAuthor) prints true
 
 const setStatusAsAuthor = (people) => {
   // Solution code here...
+  people[0].isAuthor = true;
+  people[1].isAuthor = true;
+  people[2].isAuthor = true;
 };
 
 /* ------------------------------------------------------------------------------------------------
