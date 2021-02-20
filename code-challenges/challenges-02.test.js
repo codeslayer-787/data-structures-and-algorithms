@@ -23,13 +23,18 @@ CHALLENGE 2
 Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.
 
 ------------------------------------------------------------------------------------------------ */
+const a = 'This is my story.';
 
 const appendTheEnd = (str) => {
+  const result = (`${str} The end.`);
+  return result ;
   // Solution code here...
-  const a = "This is my story.";
-  const b = "The end.";
-  return a + " " + b
+  
+  
+  // return a + " " + b
 };
+const b = appendTheEnd(a);
+// console.log(result)
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -46,14 +51,12 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   // Solution code here...
-
-  const a = ['Yes', 'it', 'is'];
-  const b = a.slice(0);
-  console.log(b);
-  b.push(a);
-
+  arr.push(arr[0]);
+  
+  console.log(arr);
 };
-
+const yes = ['Yes', 'it', 'is'];
+appendFirstToLast(yes);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -68,9 +71,11 @@ const octavia = { fullName: 'Octavia Estelle Butler' };
 addBirthYearProperty(octavia, 1947);
 console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
-
+const octavia = { fullName: 'Octavia Butler' };
 const addBirthYearProperty = (obj, year) => {
   // Solution code here...
+  obj.yearBorn = year;
+  console.log(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,13 +130,13 @@ Run your tests from the console: jest challenges-02.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return a new array of numbers raised to the thrid power', () => {
     expect(raisedToTheThird([2, 4, 5, -7, 0])).toStrictEqual([8, 64, 125, -343, 0]);
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should append without modifying the oiginal', () => {
     const a = 'This is my story.';
     const b = appendTheEnd(a);
@@ -141,7 +146,7 @@ xdescribe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should append by modifying the oiginal', () => {
     const a = ['Yes', 'it', 'is'];
     appendFirstToLast(a);
@@ -150,7 +155,7 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should add a property to an object', () => {
     const a = { fullName: 'Octavia Butler' };
     addBirthYearProperty(a, 1947);
