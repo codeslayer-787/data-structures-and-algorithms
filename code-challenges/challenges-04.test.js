@@ -46,6 +46,11 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  const numbah = /\d/gm.test(input);
+  if(numbah){
+    return true;
+  }else
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -153,13 +158,13 @@ DO NOT CHANGE any of the below code.
 Run your tests from the console: jest challenges-04.solution.test.js
 
 ------------------------------------------------------------------------------------------------ */
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should add two to every value', () => {
     expect(addTwo([1, 2, 4])).toStrictEqual([3, 4, 6]);
   })
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return true if the input contains a lower case w', () => {
     expect(containsW('hello world')).toBe(true);
   });
@@ -171,7 +176,7 @@ xdescribe('Testing challenge 2', () => {
   })
 })
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return true if the input is a number', () => {
     expect(isNum(1234567890)).toBeTruthy();
     expect(isNum('12345')).toBeTruthy();
