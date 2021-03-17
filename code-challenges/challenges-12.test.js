@@ -190,6 +190,11 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 
 const calculateProduct = (numbers) => {
   // Solution code here...
+  return numbers.reduce((acc, curr) => {
+    return acc.concat(curr)
+  },[]).reduce((acc, curr) => {
+    return acc * curr;
+  },1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -334,7 +339,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should multiply all the numbers together', () => {
     expect(calculateProduct([[1, 2], [3, 4], [5, 6]])).toStrictEqual(720);
   });
