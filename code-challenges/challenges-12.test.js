@@ -35,6 +35,15 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
   // Solution code here...
+  return matrix.reduce((acc, curr) => {
+    return acc.concat(curr);
+  },[]).reduce((acc,curr) => {
+    if(curr > acc){
+      acc = curr;
+      return acc;
+    }
+    return acc;
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -233,7 +242,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return the max value', () => {
     expect(findMax([[13,24,24,2], [2,5,6], [2,3]])).toStrictEqual(24);
   });
